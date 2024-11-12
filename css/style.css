@@ -96,9 +96,6 @@ nav ul li:hover a::before {
 
 .navbar.scrolled {
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-  .navbar-menu {
-    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-  }
   .navbar-menu li a:hover {
     color: #ffffff;
   }
@@ -112,6 +109,12 @@ nav ul li:hover a::before {
 }
 
 @media (max-width: 1080px) {
+  .navbar.scrolled {
+    .navbar-menu {
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    }
+  }
+
   .navbar-menu {
     background: linear-gradient(to right, #e5eaf3, #ffffff);
     display: flex;

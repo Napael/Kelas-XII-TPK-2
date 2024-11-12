@@ -130,11 +130,16 @@ section.dataGuru {
   --border-angle: 0turn;
   background-image: conic-gradient(
       from var(--border-angle),
-      #213,
-      #112 50%,
-      #213
+      rgb(247, 247, 247),
+      rgb(246, 246, 246) 50%,
+      rgb(244, 244, 244)
     ),
-    conic-gradient(from var(--border-angle), transparent 40%, #08f, #f03);
+    conic-gradient(
+      from var(--border-angle),
+      transparent 40%,
+      rgb(40, 40, 40),
+      rgb(0, 0, 0)
+    );
   background-size: calc(100% - (var(--border-size) * 3))
       calc(100% - (var(--border-size) * 3)),
     cover;
@@ -166,13 +171,13 @@ section.dataGuru {
 }
 
 .infoL-box h3 {
-  color: #ffffff;
+  color: #000000;
   font-size: 1.2rem;
   margin-bottom: 20px;
 }
 
 .infoL-box a {
-  color: #ffffff;
+  color: #000000;
 }
 
 .close-button {
