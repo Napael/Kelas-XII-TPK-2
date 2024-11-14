@@ -28,59 +28,63 @@ hamburger.addEventListener("click", function () {
 
 // ANIMASI TEKS
 const elemenTeks = document.getElementById("text");
-const teksAwal = "Welcome To TPK 2 Website";
-const teksAkhir = "SMK NEGERI 1 TAMBAKBOYO";
-let indeks = 0;
 
-function ketikTeks(teks, callback) {
-  if (indeks < teks.length) {
-    elemenTeks.textContent += teks.charAt(indeks);
-    indeks++;
-    setTimeout(() => ketikTeks(teks, callback), 100);
-  } else {
-    setTimeout(callback, 3000);
+if (elemenTeks) {
+  const teksAwal = "Welcome To TPK 2 Website";
+  const teksAkhir = "SMK NEGERI 1 TAMBAKBOYO";
+  let indeks = 0;
+
+  function ketikTeks(teks, callback) {
+    if (indeks < teks.length) {
+      elemenTeks.textContent += teks.charAt(indeks);
+      indeks++;
+      setTimeout(() => ketikTeks(teks, callback), 100);
+    } else {
+      setTimeout(callback, 3000);
+    }
   }
-}
 
-function hapusTeks(callback) {
-  if (indeks > 0) {
-    elemenTeks.textContent = elemenTeks.textContent.slice(0, --indeks);
-    setTimeout(() => hapusTeks(callback), 50);
-  } else {
-    callback();
+  function hapusTeks(callback) {
+    if (indeks > 0) {
+      elemenTeks.textContent = elemenTeks.textContent.slice(0, --indeks);
+      setTimeout(() => hapusTeks(callback), 50);
+    } else {
+      callback();
+    }
   }
-}
 
-function mulaiAnimasi() {
-  ketikTeks(teksAwal, () => {
-    hapusTeks(() => {
-      indeks = 0;
-      setTimeout(() => {
-        ketikTeks(teksAkhir, () => {
-          hapusTeks(() => {
-            indeks = 0;
-            setTimeout(mulaiAnimasi, 0);
+  function mulaiAnimasi() {
+    ketikTeks(teksAwal, () => {
+      hapusTeks(() => {
+        indeks = 0;
+        setTimeout(() => {
+          ketikTeks(teksAkhir, () => {
+            hapusTeks(() => {
+              indeks = 0;
+              setTimeout(mulaiAnimasi, 0);
+            });
           });
         });
       });
     });
-  });
-}
-mulaiAnimasi();
+  }
 
-// IL
+  mulaiAnimasi();
+}
+
+// Info
 function btninfo(infoLengkapId) {
   const infoLengkap = document.getElementById(infoLengkapId);
-  const body = document.body; // Ambil elemen body
+  const body = document.body;
 
   if (
     infoLengkap.style.display === "none" ||
     infoLengkap.style.display === ""
   ) {
-    infoLengkap.style.display = "flex"; // Tampilkan infoLengkap
-    body.classList.add("no-scroll"); // Tambahkan kelas no-scroll pada body
+    infoLengkap.style.display = "flex";
+    body.classList.add("no-scroll");
   } else {
-    infoLengkap.style.display = "none"; // Sembunyikan overlay
-    body.classList.remove("no-scroll"); // Hapus kelas no-scroll dari body
+    infoLengkap.style.display = "none";
+    body.classList.remove("no-scroll");
   }
 }
