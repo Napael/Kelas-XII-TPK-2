@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 20px 20px;
+  padding: 60px 10px 20px;
   background: radial-gradient(ellipse at bottom, #424c80 0%, #414971 100%);
 }
 
