@@ -8,6 +8,7 @@
 .navbar-menu li a:hover {
   filter: none;
 }
+
 .wrapper img {
   background-color: white;
   border-radius: 50%;
@@ -97,7 +98,7 @@
     font-size: 1rem;
   }
   .wrapper img {
-    display: none;
+    width: 100px;
   }
 }
 .navbar-menu li a:hover {
@@ -115,13 +116,15 @@ nav ul li a::before {
   .wrapper h1 {
     text-align: center;
     font-size: 1rem !important;
-    top: 43% !important;
+    top: 46% !important;
   }
   .text-container {
     font-size: 0.6rem;
-    top: 47% !important;
+    top: 50% !important;
   }
-
+  .wrapper img {
+    top: 37% !important;
+  }
   .navbar {
     background: linear-gradient(to right, #e5eaf3, #ffffff);
   }
